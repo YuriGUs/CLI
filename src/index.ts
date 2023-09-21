@@ -1,7 +1,8 @@
-import { GenFile } from 'controllers/generate.controller';
+#!/usr/bin/env node
 import inquirer from 'inquirer';
+import { questions } from 'questions';
 import { IAnswers } from 'interfaces/answers.interfaces';
-import { questions } from 'interfaces/questions';
+import { GenFile } from 'controllers/generate.controller';
 
 class Init {
   constructor() {
