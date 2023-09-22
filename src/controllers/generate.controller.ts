@@ -3,6 +3,7 @@ import { EChoicesBoilerPlate } from 'enum/choices-boilerplate.enum';
 import { EGitName } from 'enum/git-name.enum';
 import { IAnswers } from 'interfaces/answers.interfaces';
 import path from 'path';
+import fs from 'node:fs';
 
 class GenerateController {
   public gen(answers: IAnswers) {
@@ -25,6 +26,11 @@ class GenerateController {
     try {
       shellJs.cd(path.resolve());
       shellJs.exec(`git clone git@github.com:troquatte/${gitName}.git`);
+
+      fs.renameSync(
+        `${path.join(path.resolve(), gitName)}`,
+        `${path.join(path.resolve(), folderName)}`,
+      );
 
       console.log('Arquivo criado com sucesso!');
       return shellJs.exit();
