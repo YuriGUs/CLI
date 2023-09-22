@@ -3,7 +3,7 @@ import { EChoicesBoilerPlate } from 'enum/choices-boilerplate.enum';
 import { EGitName } from 'enum/git-name.enum';
 import { IAnswers } from 'interfaces/answers.interfaces';
 import path from 'path';
-import fs from 'node:fs';
+import * as fs from 'node:fs';
 
 class GenerateController {
   public gen(answers: IAnswers) {
