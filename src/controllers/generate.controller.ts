@@ -25,7 +25,7 @@ class GenerateController {
   private _execPath(gitName: string, folderName: string) {
     try {
       shellJs.cd(path.resolve());
-      shellJs.exec(`git clone git@github.com:troquatte/${gitName}.git`);
+      shellJs.exec(`git clone git@github.com:YuriGUs/${gitName}.git`);
 
       fs.renameSync(
         `${path.join(path.resolve(), gitName)}`,
